@@ -4,6 +4,8 @@
 
 A clean, responsive web application that provides comprehensive real-time weather details. Beyond basic temperature, SkySense offers deep insights into air quality and solar safety
 
+<img src="Screenshot 2025-12-19 213551.png">
+
 ## ✨ Key Features
 * **Global Search:** Enter any city name to get instant weather data.
 * **Health & Safety Data:** Includes **UV Index** (sun safety) and **AQI** (Air Quality Index).
