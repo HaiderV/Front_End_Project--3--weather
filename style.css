@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari */
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+#bg_video {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(6px) brightness(0.85);
+    transform: scale(1.08);
+}
+#Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+    margin-top: 1vh;
+}
+#Title p {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+#search_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+
+}
+#search_bar button {
+  width: 3vw;
+  height: 6vh;
+  border-radius: 50%;
+  margin-left: 1vw;
+  color: #111;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  outline: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+/* hover effect */
+#search_bar button:hover {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12);
+}
+#city_input {
+  width: 40vw;
+  height: 9vh;
+
+  /* text spacing */
+  padding: 0 22px;          /* left & right spacing */
+  font-size: 1rem;
+  line-height: 1;
+  color: #111;
+
+  /* glass effect */
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  /* shadow */
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+/* placeholder alignment */
+#city_input::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* hover effect */
+#city_input:hover {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* focus (when typing) */
+#city_input:focus {
+  border-color: rgba(0, 122, 255, 0.5); /* iOS blue */
+  box-shadow:
+    0 12px 32px rgba(0, 122, 255, 0.18);
+}
+
+/* placeholder style */
+#city_input::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+#popular_cities {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1vw;
+    justify-items: center;
+    align-items: center;
+    margin-top: 5vh;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    color: rgb(31, 30, 30);
+}
+.cities {
+  width: 20vw;
+  height: 45vh;
+  margin-bottom: 5vh;
+
+  /* stronger glass / mirror effect */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.15)
+  );
+
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  /* reflective highlight + depth */
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.cities:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.45),
+    rgba(255, 255, 255, 0.22)
+  );
+
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+.cities::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.35),
+    transparent 40%
+  );
+  pointer-events: none;
+}
+
+#footer {
+  margin-top: 15vh;
+  height: 10vh;
+  width: 100%;
+  margin-top: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  /* glass footer */
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.15)
+  );
+
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+
+  box-shadow:
+    0 -6px 20px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+#footer {
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+#footer p {
+  color: rgba(11, 29, 58, 0.7);
+  font-size: 0.7rem;
+}
+.city_weather {
+  width: 20vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.city_weather img {
+  width: 13vw;
+  height: 13vw;
+  padding-left: 4vw;
+  padding-bottom: 8vh;
+}
+.city_weather p {
+  position: relative;
+  bottom: 4vh;
+  left: 1vw;
+  font-size: 1.5rem;
+}
+.city_head {
+  width: 20vw;
+  margin-left: 1vw;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #374151;
+}
+.city_humidity {
+  width: 20vw;
+  margin-left: 1vw;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  bottom: 4vh;
+}
+.city_uv {
+  margin-left: 1vw;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.dark_bg {
+  background: linear-gradient(
+  135deg,
+  rgba(0, 0, 0, 0.35),
+  rgba(0, 0, 0, 0.15)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #e5e7eb;   /* light gray */
+}
+.hide {
+  display: none !important;
+}
+#search_city {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+#search_weather {
+  width: 70vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0;
+}
+#search_left {
+  padding-left: 1.3vw;
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  justify-content: left;
+}
+#search_head {
+  margin-top: 2vh;
+  margin-left: 1vw;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #374151;
+}
+#search_temp {
+  display: flex;
+  height: 20vh;
+}
+#search_temp img {
+  width: 10vw;
+  height: 10vw;
+  position: relative;
+  left: 2vw;
+  bottom: 4vh;
+}
+#search_temp p {
+  margin-top: 2vh;
+  font-size: 2.8rem;
+}
+.search_humidity {
+  font-size: 1rem;
+  font-weight: 500;
+
+}
+.search_uv {
+  margin-left: 1vw;
+  font-size: 1rem;
+  font-weight: 500;
+}
+#search_right {
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding-top: 3vh;
+  gap: 2vh;
+}
+#search_aqi p{
+  font-size: 1rem;
+  font-weight: 500;
+}
+#search_ws p{
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+

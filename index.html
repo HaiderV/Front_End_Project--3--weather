@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherAPI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay muted loop playsinline id="bg_video">
+        <source src="Deep Blue Sky - Clouds Timelapse - Free Footage - Full HD 1080p 1080p.mp4" type="video/mp4">
+    </video>
+    <div id="Title">
+        <p>Weather Site</p>
+    </div>
+    <div id="search_bar">
+        <input type="text" id="city_input" placeholder=" 🔎 Enter city name">
+        <button id="cancel_btn" class="hide">✕</button>
+    </div>
+    <div id="popular_cities" class="">
+        <div id="city_1" class="cities">
+            <div class="city_head">
+                <p id="cp1">New Delhi</p>
+            </div>
+            <div class="city_weather">
+                <p id="weather1">..</p>
+                <img id="img1" src="sunny.png">
+            </div>
+            <div class="city_humidity">
+                <p id="humidity1">Humidity: </p>
+            </div>
+            <div class="city_uv">
+                <p id="uv1">UV Index: </p>
+            </div>
+        </div>
+        <div id="city_2" class="cities">
+            <div class="city_head">
+                <p id="cp2">Bengaluru</p>
+            </div>
+            <div class="city_weather">
+                <p id="weather2">..</p>
+                <img id="img2"src="sunny.png">
+            </div>
+            <div class="city_humidity">
+                <p id="humidity2">Humidity: </p>
+            </div>
+            <div class="city_uv">
+                <p id="uv2">UV Index: </p>
+            </div>
+        </div>
+        <div id="city_3" class="cities">
+            <div class="city_head">
+                <p id="cp3">London</p>
+            </div>
+            <div class="city_weather">
+                <p id="weather3">..</p>
+                <img id="img3" src="sunny.png">
+            </div>
+            <div class="city_humidity">
+                <p id="humidity3">Humidity: </p>
+            </div>
+            <div class="city_uv">
+                <p id="uv3">UV Index: </p>
+            </div>
+        </div>
+        <div id="city_4" class="cities">
+            <div class="city_head">
+                <p id="cp4">Paris</p>
+            </div>
+            <div class="city_weather">
+                <p id="weather4">..</p>
+                <img id="img4" src="sunny.png">
+            </div>
+            <div class="city_humidity">
+                <p id="humidity4">Humidity: </p>
+            </div>
+            <div class="city_uv">
+                <p id="uv4">UV Index: </p>
+            </div>
+        </div>
+    </div>
+    <div id="search_city" class="hide">
+        <div id="search_weather" class="cities">
+            <div id="search_left">
+                <div id="search_head">
+                    <p id="search_city_name">City Name</p>
+                </div>
+                <div id="search_temp">
+                    <p id="temperature">23</p>
+                    <img id="search_img" src="sunny.png">
+                </div>
+                <div id="search_humidity">
+                    <p id="humidity">Humidity: </p>
+                </div>
+                <div id="search_uv">
+                    <p id="uv">UV Index: </p>
+                </div>
+            </div>
+            <div id="search_right">
+                <div id="search_aqi">
+                    <p id="aqi">Air Quality Index: </p>
+                </div>
+                <div id="search_ws">
+                    <p id="wind_speed">Wind Speed: </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="footer">
+          <p><b>Created by: </b>Haider Saifuddin Vadgamwala</p>
+          <p><b>Project: </b>Using API to fetch weather data</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
