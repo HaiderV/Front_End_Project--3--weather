@@ -13,6 +13,7 @@ A clean, responsive web application that provides comprehensive real-time weathe
 * **Frontend:** HTML, CSS, JavaScript
 * **API:** Powered by [Open-Metro]
 
-* **What I Learned:** 1) How to use api
-* 2) callbacks>Promises>async
-  3) Started with advance JavaScript
+## What I Learned
+1) How to use api
+2) callbacks>Promises>async
+3) Started with advance JavaScript
